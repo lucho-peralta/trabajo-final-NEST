@@ -12,6 +12,16 @@ export class ClienteController {
     return this.clienteService.getAll();
   }
 
+  @Get('activos')
+  getAllActivos() {
+    return this.clienteService.getAllActivos();
+  }
+
+  @Get('inactivos')
+  getAllInactivos() {
+    return this.clienteService.getAllInactivos();
+  }
+
   @Get(':id')
   getbyId(@Param('id') id: string) {
     

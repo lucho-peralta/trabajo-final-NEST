@@ -29,11 +29,11 @@
     },
     {
       "id": 4,
-      "dni": "34567890",
-      "nombre": "Laura Fernandez",
-      "telefono": "1122223344",
-      "email": "laura.fernandez@gmail.com",
-      "direccion": "Belgrano 900",
+      "dni": "40111222",
+      "nombre": "Martín Acosta",
+      "telefono": "1133445566",
+      "email": "martin.acosta@gmail.com",
+      "direccion": "Av. Rivadavia 1500",
       "estado": "activo"
     }
   ],
@@ -41,29 +41,46 @@
     {
       "id": 1,
       "nombre": "Rocky",
+      "especie": "perro",
       "raza": "Labrador",
       "sexo": "Macho",
       "edad": 5,
       "peso": 25,
+      "estado": "activo",
       "clienteId": 1
     },
     {
       "id": 2,
       "nombre": "Carmen",
+      "especie": "gato",
       "raza": "Siames",
       "sexo": "Hembra",
       "edad": 3,
       "peso": 4,
+      "estado": "activo",
       "clienteId": 2
     },
     {
       "id": 3,
       "nombre": "Max",
+      "especie": "perro",
       "raza": "Bulldog",
       "sexo": "Macho",
       "edad": 2,
       "peso": 20,
+      "estado": "activo",
       "clienteId": 3
+    },
+    {
+      "id": 4,
+      "nombre": "tango",
+      "especie": "perro",
+      "raza": "border collie",
+      "sexo": "Macho",
+      "edad": 4,
+      "peso":20,
+      "estado": "activo",
+      "clienteId": 4
     }
   ],
   "historial": {

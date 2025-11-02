@@ -17,6 +17,25 @@ export class ClienteService {
   }
   return datos.clientes;
 }
+  getAllActivos() {
+    const datos = dbService.leerDB();
+
+    if (!Array.isArray(datos.clientes) || datos.clientes.length === 0) {
+      throw new NotFoundException('No hay clientes registrados');
+    }
+
+    return datos.clientes.filter(cliente => cliente.estado === 'activo');
+  }
+
+  getAllInactivos() {
+    const datos = dbService.leerDB();
+
+    if (!Array.isArray(datos.clientes) || datos.clientes.length === 0) {
+      throw new NotFoundException('No hay clientes registrados');
+    }
+
+    return datos.clientes.filter(cliente => cliente.estado === 'inactivo');
+  }
 
  getById(id: number) {
     const datos = dbService.leerDB();
