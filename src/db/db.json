@@ -83,54 +83,68 @@
       "clienteId": 4
     }
   ],
-  "historial": {
-    "tratamientos": [
-      {
-        "id": 1,
-        "mascotaId": 1,
-        "fecha": "2025-03-22",
-        "diagnostico": "Otitis grave",
-        "tratamiento": "Antibioticos y limpieza"
-      },
-      {
-        "id": 2,
-        "mascotaId": 2,
-        "fecha": "2025-04-10",
-        "diagnostico": "Gripe felina",
-        "tratamiento": "Reposo y suero"
-      },
-      {
-        "id": 3,
-        "mascotaId": 3,
-        "fecha": "2025-05-05",
-        "diagnostico": "Parasitos intestinales",
-        "tratamiento": "Desparasitante oral"
-      }
-    ],
-    "vacunas": [
-      {
-        "id": 1,
-        "mascotaId": 1,
-        "nombre": "Antirrabica doble",
-        "fechaAplicacion": "2024-10-15",
-        "proximaAplicacion": "2025-10-15"
-      },
-      {
-        "id": 2,
-        "mascotaId": 2,
-        "nombre": "Triple felina",
-        "fechaAplicacion": "2025-02-10",
-        "proximaAplicacion": "2026-02-10"
-      },
-      {
-        "id": 3,
-        "mascotaId": 3,
-        "nombre": "Leucemia felina",
-        "fechaAplicacion": "2025-03-01",
-        "proximaAplicacion": "2026-03-01"
-      }
-    ]
+  "historialMascotas": [
+  {
+    "id": 1,
+    "mascotaId": 1,
+    "fecha": "2024-10-15",
+    "tipo": "vacuna",
+    "descripcion": "Antirrabica doble aplicada",
+    "detalle": {
+      "proximaAplicacion": "2025-10-15"
+    }
   },
+  {
+    "id": 2,
+    "mascotaId": 2,
+    "fecha": "2025-02-10",
+    "tipo": "vacuna",
+    "descripcion": "Triple felina aplicada",
+    "detalle": {
+      "proximaAplicacion": "2026-02-10"
+    }
+  },
+  {
+    "id": 3,
+    "mascotaId": 3,
+    "fecha": "2025-03-01",
+    "tipo": "vacuna",
+    "descripcion": "Leucemia felina aplicada",
+    "detalle": {
+      "proximaAplicacion": "2026-03-01"
+    }
+  },
+  {
+    "id": 4,
+    "mascotaId": 1,
+    "fecha": "2025-03-22",
+    "tipo": "tratamiento",
+    "descripcion": "Otitis grave",
+    "detalle": {
+      "tratamiento": "Antibióticos y limpieza"
+    }
+  },
+  {
+    "id": 5,
+    "mascotaId": 2,
+    "fecha": "2025-04-10",
+    "tipo": "tratamiento",
+    "descripcion": "Gripe felina",
+    "detalle": {
+      "tratamiento": "Reposo y suero"
+    }
+  },
+  {
+    "id": 6,
+    "mascotaId": 3,
+    "fecha": "2025-05-05",
+    "tipo": "tratamiento",
+    "descripcion": "Parásitos intestinales",
+    "detalle": {
+      "tratamiento": "Desparasitante oral"
+    }
+  }
+],
   "turnos": [
     {
       "id": 1,
