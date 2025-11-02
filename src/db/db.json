@@ -7,7 +7,7 @@
       "telefono": "1123456789",
       "email": "ana.torres@gmail.com",
       "direccion": "av rivadavia 1234",
-      "activo": true
+      "estado": "activo"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "telefono": "1139876543",
       "email": "carlos.ramirez@gmail.com",
       "direccion": "San Martin 432",
-      "activo": true
+      "estado": "activo"
     },
     {
       "id": 3,
@@ -25,16 +25,16 @@
       "telefono": "1122223344",
       "email": "laura.fernandez@gmail.com",
       "direccion": "Belgrano 900",
-      "activo": true
+      "estado": "activo"
     },
     {
       "id": 4,
-      "dni": "12346738",
+      "dni": "12346739",
       "nombre": "luciano",
       "telefono": "1122334555",
       "mail": "luciano@email.com",
       "direccion": "panama 156",
-      "activo": true
+      "estado": "inactivo"
     }
   ],
   "mascotas": [

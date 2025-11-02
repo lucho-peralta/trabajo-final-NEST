@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsEmail, IsString, IsNumberString,MinLength, IsOptional, Length} from 'class-validator';
+import { IsNotEmpty, IsEmail, IsString, IsNumberString,MinLength, IsOptional,Matches, Length} from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class CreateClienteDto {
@@ -29,4 +29,10 @@ export class CreateClienteDto {
   @IsEmail({}, { message: 'Email inválido' })
   @Transform(({value}) => value.trim().toLowerCase())
   mail?: string;
+
+  @IsOptional()
+  @IsString({ message: 'El estado activo debe ser activo o inactivo' })
+  @Transform(({ value }) => value.trim().toLowerCase())
+  @Matches(/^(activo|inactivo)$/, {message: 'El estado debe ser "activo" o "inactivo"'})
+  estado?: 'activo' | 'inactivo';
 }

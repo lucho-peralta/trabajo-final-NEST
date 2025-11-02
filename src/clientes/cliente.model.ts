@@ -5,6 +5,6 @@ export class ClienteModel {
   telefono: string;
   mail: string;
   direccion: string;
-  activo: boolean;
+  estado: 'activo' | 'inactivo';
 }
 
