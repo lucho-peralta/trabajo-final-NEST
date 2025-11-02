@@ -19,7 +19,7 @@ export class CreateClienteDto {
   @Length(10, 10, { message: 'El teléfono debe tener 10 caracteres' })
   telefono: string;
 
-  @IsNotEmpty({ message: 'El telefono es obligatorio' })
+  @IsNotEmpty({ message: 'La direccion es obligatoria' })
   @IsString({ message: 'La dirección debe ser un texto' })
   @MinLength(4, { message: 'La direccion debe tener 4 caracteres como mínimo' })
   @Transform(({value}) => value.trim().toLowerCase())
