@@ -27,18 +27,18 @@ export class ClienteService {
 
     return clienteEncontrado;
   }
-  
 
-createCliente(clienteDto: CreateClienteDto) {
+
+  createCliente(clienteDto: CreateClienteDto) {
   const datos = dbService.leerDB();
 
   if (!Array.isArray(datos.clientes)) {
     datos.clientes = [];
   }
 
-  const existeCliente = datos.clientes.some(cliente => cliente.telefono === clienteDto.telefono);
+  const existeCliente = datos.clientes.some(cliente => cliente.dni === clienteDto.dni);
   if (existeCliente) {
-    throw new BadRequestException(`Ya existe un cliente con el número de teléfono: ${clienteDto.telefono}`);
+    throw new BadRequestException(`Ya existe un cliente con el número de DNI ingresado: ${clienteDto.dni}`);
   }
 
   if (!direccionTieneNumero(clienteDto.direccion)) {
@@ -54,6 +54,7 @@ createCliente(clienteDto: CreateClienteDto) {
 
   const nuevoCliente: ClienteModel = {
     id: nuevoId,
+    dni: clienteDto.dni,
     nombre: clienteDto.nombre,
     telefono: clienteDto.telefono,
     mail: clienteDto.mail ?? '',
@@ -64,7 +65,8 @@ createCliente(clienteDto: CreateClienteDto) {
   datos.clientes.push(nuevoCliente);
   dbService.guardarDB(datos);
   return nuevoCliente;
-}
+  }
+
 
 
 }
