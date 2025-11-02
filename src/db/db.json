@@ -1,0 +1,136 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Ana Torres",
+      "telefono": "1123456789",
+      "email": "ana.torres@gmail.com",
+      "direccion": "av rivadavia 1234",
+      "activo": true
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos Ramirez",
+      "telefono": "1139876543",
+      "email": "carlos.ramirez@gmail.com",
+      "direccion": "San Martin 432",
+      "activo": true
+    },
+    {
+      "id": 3,
+      "nombre": "Laura Fernandez",
+      "telefono": "1122223344",
+      "email": "laura.fernandez@gmail.com",
+      "direccion": "Belgrano 900",
+      "activo": true
+    },
+    {
+      "id": 4,
+      "nombre": "luciano",
+      "telefono": "1122337475",
+      "mail": "luciano@gmail.com",
+      "direccion": "panama 156",
+      "activo": true
+    }
+  ],
+  "mascotas": [
+    {
+      "id": 1,
+      "nombre": "Rocky",
+      "raza": "Labrador",
+      "sexo": "Macho",
+      "edad": 5,
+      "peso": 25,
+      "clienteId": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Carmen",
+      "raza": "Siames",
+      "sexo": "Hembra",
+      "edad": 3,
+      "peso": 4,
+      "clienteId": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Max",
+      "raza": "Bulldog",
+      "sexo": "Macho",
+      "edad": 2,
+      "peso": 20,
+      "clienteId": 3
+    }
+  ],
+  "historial": {
+    "tratamientos": [
+      {
+        "id": 1,
+        "mascotaId": 1,
+        "fecha": "2025-03-22",
+        "diagnostico": "Otitis grave",
+        "tratamiento": "Antibioticos y limpieza"
+      },
+      {
+        "id": 2,
+        "mascotaId": 2,
+        "fecha": "2025-04-10",
+        "diagnostico": "Gripe felina",
+        "tratamiento": "Reposo y suero"
+      },
+      {
+        "id": 3,
+        "mascotaId": 3,
+        "fecha": "2025-05-05",
+        "diagnostico": "Parasitos intestinales",
+        "tratamiento": "Desparasitante oral"
+      }
+    ],
+    "vacunas": [
+      {
+        "id": 1,
+        "mascotaId": 1,
+        "nombre": "Antirrabica doble",
+        "fechaAplicacion": "2024-10-15",
+        "proximaAplicacion": "2025-10-15"
+      },
+      {
+        "id": 2,
+        "mascotaId": 2,
+        "nombre": "Triple felina",
+        "fechaAplicacion": "2025-02-10",
+        "proximaAplicacion": "2026-02-10"
+      },
+      {
+        "id": 3,
+        "mascotaId": 3,
+        "nombre": "Leucemia felina",
+        "fechaAplicacion": "2025-03-01",
+        "proximaAplicacion": "2026-03-01"
+      }
+    ]
+  },
+  "turnos": [
+    {
+      "id": 1,
+      "fecha": "2025-10-25T10:00:00",
+      "motivo": "Vacunacion antirrabica",
+      "mascotaId": 1,
+      "estado": "pendiente"
+    },
+    {
+      "id": 2,
+      "fecha": "2025-10-20T15:30:00",
+      "motivo": "Control parcial",
+      "mascotaId": 2,
+      "estado": "completado"
+    },
+    {
+      "id": 3,
+      "fecha": "2025-11-01T11:00:00",
+      "motivo": "Chequeo anual",
+      "mascotaId": 3,
+      "estado": "pendiente"
+    }
+  ]
+}
