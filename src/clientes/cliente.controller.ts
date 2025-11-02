@@ -1,4 +1,4 @@
-import { Controller, Get, Param, NotFoundException, Post, Body, Patch} from '@nestjs/common';
+import { Controller, Get, Param, NotFoundException, Post, Body, Patch, Delete} from '@nestjs/common';
 import { ClienteService } from './cliente.service';
 import { CreateClienteDto } from './dto/createCliente.dto';
 import { UpdateClienteDto } from './dto/updateCliente.dto';
@@ -39,6 +39,17 @@ export class ClienteController {
 
     return this.clienteService.updateCliente(idNum, clienteDto);
   }
+
+  @Delete(':id')
+  delete(@Param('id') id: string) {
+  const idNum = Number(id);
+
+  if (isNaN(idNum) || idNum < 1) {
+    throw new NotFoundException('El ID ingresado debe ser un número entero mayor a cero');
+  }
+
+  return this.clienteService.deleteCliente(idNum);
+}
 
   
  

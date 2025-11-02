@@ -29,12 +29,12 @@
     },
     {
       "id": 4,
-      "dni": "12346739",
-      "nombre": "luciano",
-      "telefono": "1122334555",
-      "mail": "luciano@email.com",
-      "direccion": "panama 156",
-      "estado": "inactivo"
+      "dni": "34567890",
+      "nombre": "Laura Fernandez",
+      "telefono": "1122223344",
+      "email": "laura.fernandez@gmail.com",
+      "direccion": "Belgrano 900",
+      "estado": "activo"
     }
   ],
   "mascotas": [

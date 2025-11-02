@@ -65,6 +65,7 @@ export class ClienteService {
 
   datos.clientes.push(nuevoCliente);
   dbService.guardarDB(datos);
+  
   return nuevoCliente;
   }
 
@@ -111,7 +112,27 @@ export class ClienteService {
   }
 
   dbService.guardarDB(datos);
-  return cliente;
+
+  return  cliente;
+  
+  }
+
+  deleteCliente(id:number) {
+    const datos = dbService.leerDB();
+    
+    const indice = datos.clientes.findIndex(cliente => cliente.id === id);
+    
+    if (indice === -1) {
+      throw new NotFoundException(`No existe un cliente con ID ${id}`);
+    }
+
+    const clienteEliminado = datos.clientes.splice(indice, 1)[0];
+
+    dbService.guardarDB(datos);
+
+
+    return clienteEliminado;
+
   }
 
 
