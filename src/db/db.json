@@ -73,78 +73,78 @@
     },
     {
       "id": 4,
-      "nombre": "tango",
+      "nombre": "Tango",
       "especie": "perro",
-      "raza": "border collie",
+      "raza": "Border Collie",
       "sexo": "Macho",
       "edad": 4,
-      "peso":20,
+      "peso": 20,
       "estado": "activo",
       "clienteId": 4
     }
   ],
   "historialMascotas": [
-  {
-    "id": 1,
-    "mascotaId": 1,
-    "fecha": "2024-10-15",
-    "tipo": "vacuna",
-    "descripcion": "Antirrabica doble aplicada",
-    "detalle": {
-      "proximaAplicacion": "2025-10-15"
-    }
-  },
-  {
-    "id": 2,
-    "mascotaId": 2,
-    "fecha": "2025-02-10",
-    "tipo": "vacuna",
-    "descripcion": "Triple felina aplicada",
-    "detalle": {
+    {
+      "id": 1,
+      "mascotaId": 1,
+      "fecha": "2024-10-15",
+      "tipo": "vacuna",
+      "descripcion": "Vacuna triple actualizada",
+      "proximaAplicacion": "2025-10-15",
+      "resultado": "leve fiebre"
+    },
+    {
+      "id": 2,
+      "mascotaId": 2,
+      "fecha": "2025-02-10",
+      "tipo": "vacuna",
+      "descripcion": "Triple felina aplicada",
       "proximaAplicacion": "2026-02-10"
-    }
-  },
-  {
-    "id": 3,
-    "mascotaId": 3,
-    "fecha": "2025-03-01",
-    "tipo": "vacuna",
-    "descripcion": "Leucemia felina aplicada",
-    "detalle": {
+    },
+    {
+      "id": 3,
+      "mascotaId": 3,
+      "fecha": "2025-03-01",
+      "tipo": "vacuna",
+      "descripcion": "Leucemia felina aplicada",
       "proximaAplicacion": "2026-03-01"
-    }
-  },
-  {
-    "id": 4,
-    "mascotaId": 1,
-    "fecha": "2025-03-22",
-    "tipo": "tratamiento",
-    "descripcion": "Otitis grave",
-    "detalle": {
+    },
+    {
+      "id": 4,
+      "mascotaId": 1,
+      "fecha": "2025-03-22",
+      "tipo": "tratamiento",
+      "descripcion": "Otitis grave",
       "tratamiento": "Antibióticos y limpieza"
-    }
-  },
-  {
-    "id": 5,
-    "mascotaId": 2,
-    "fecha": "2025-04-10",
-    "tipo": "tratamiento",
-    "descripcion": "Gripe felina",
-    "detalle": {
+    },
+    {
+      "id": 5,
+      "mascotaId": 2,
+      "fecha": "2025-04-10",
+      "tipo": "tratamiento",
+      "descripcion": "Gripe felina",
       "tratamiento": "Reposo y suero"
-    }
-  },
-  {
-    "id": 6,
-    "mascotaId": 3,
-    "fecha": "2025-05-05",
-    "tipo": "tratamiento",
-    "descripcion": "Parásitos intestinales",
-    "detalle": {
+    },
+    {
+      "id": 6,
+      "mascotaId": 3,
+      "fecha": "2025-05-05",
+      "tipo": "tratamiento",
+      "descripcion": "Parásitos intestinales",
       "tratamiento": "Desparasitante oral"
+    },
+    {
+      "id": 7,
+      "mascotaId": 3,
+      "fecha": "2025-10-01",
+      "tipo": "vacuna",
+      "descripcion": "Vacuna antirrábica anual",
+      "tratamiento": "",
+      "proximaAplicacion": "2026-12-01",
+      "resultado": "",
+      "observacion": ""
     }
-  }
-],
+  ],
   "turnos": [
     {
       "id": 1,

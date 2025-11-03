@@ -24,8 +24,10 @@ export class MascotaController {
 
   @Get(':id')
   getById(@Param('id') id: string) {
+    
     const idNum = Number(id);
-    if (isNaN(idNum) || idNum < 1) {
+
+    if (isNaN(idNum) || !Number.isInteger(idNum) || idNum < 1) {
       throw new BadRequestException('El ID ingresado debe ser un número entero mayor a cero');
     }
 
@@ -40,7 +42,7 @@ export class MascotaController {
   @Patch(':id')
   updateMascota(@Param('id') id: string, @Body() cambios: UpdateMascotaDto) {
     const idNum = Number(id);
-    if (isNaN(idNum) || idNum < 1) {
+    if (isNaN(idNum) || !Number.isInteger(idNum) || idNum < 1) {
       throw new BadRequestException('El ID ingresado debe ser un número entero mayor a cero');
     }
 
@@ -50,7 +52,7 @@ export class MascotaController {
   @Delete(':id')
   deleteMascota(@Param('id') id: string) {
     const idNum = Number(id);
-    if (isNaN(idNum) || idNum < 1) {
+    if (isNaN(idNum) || !Number.isInteger(idNum) || idNum < 1) {
       throw new BadRequestException('El ID ingresado debe ser un número entero mayor a cero');
     }
 

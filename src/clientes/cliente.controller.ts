@@ -27,7 +27,7 @@ export class ClienteController {
     
     const idNum = Number(id);
 
-    if (isNaN(idNum) || idNum < 1){
+    if (isNaN(idNum) || !Number.isInteger(idNum) || idNum < 1){
       throw new NotFoundException('El ID ingresado debe ser un numero entero mayor a cero');
     }
 
@@ -43,7 +43,7 @@ export class ClienteController {
   update(@Param('id') id: string, @Body() clienteDto: UpdateClienteDto) {
     const idNum = Number(id);
 
-    if (isNaN(idNum) || idNum < 1) {
+    if (isNaN(idNum) || !Number.isInteger(idNum) || idNum < 1) {
       throw new NotFoundException( 'El ID ingresado debe ser un número entero mayor a cero');
     }
 
@@ -54,7 +54,7 @@ export class ClienteController {
   delete(@Param('id') id: string) {
   const idNum = Number(id);
 
-  if (isNaN(idNum) || idNum < 1) {
+  if (isNaN(idNum) || !Number.isInteger(idNum) || idNum < 1) {
     throw new NotFoundException('El ID ingresado debe ser un número entero mayor a cero');
   }
 
