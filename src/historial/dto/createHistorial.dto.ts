@@ -6,7 +6,7 @@ export class CreateHistorialDto {
   @Min(1, { message: 'El ID de la mascota debe ser mayor que 0' })
   mascotaId: number;
 
-  @IsString({ message: 'La fecha es obligatoria y debe tener formato ISO' })
+  @IsString({ message: 'La fecha es obligatoria' })
   @IsNotEmpty({ message: 'La fecha es obligatoria' })
   @Transform(({ value }) => value.trim())
   fecha: string;

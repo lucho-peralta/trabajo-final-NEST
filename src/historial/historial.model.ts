@@ -1,8 +1,8 @@
 export class HistorialModel {
   id: number;
   mascotaId: number;
-  fecha: string; // formato ISO: "2025-11-03"
-  tipo: 'vacuna' | 'tratamiento' | 'diagnostico' | 'chequeo' | 'otro';
+  fecha: string; // formato "2025-11-03"
+  tipo: string;
   descripcion: string;
   tratamiento?: string;
   proximaAplicacion?: string;

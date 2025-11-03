@@ -149,9 +149,9 @@
     {
       "id": 1,
       "fecha": "2025-10-25T10:00:00",
-      "motivo": "Vacunacion antirrabica",
-      "mascotaId": 1,
-      "estado": "pendiente"
+      "motivo": "control post vacuna",
+      "mascotaId": 3,
+      "estado": "realizado"
     },
     {
       "id": 2,
@@ -164,6 +164,13 @@
       "id": 3,
       "fecha": "2025-11-01T11:00:00",
       "motivo": "Chequeo anual",
+      "mascotaId": 3,
+      "estado": "pendiente"
+    },
+    {
+      "id": 4,
+      "fecha": "2025-11-10T10:00:00",
+      "motivo": "vacuna anual",
       "mascotaId": 3,
       "estado": "pendiente"
     }

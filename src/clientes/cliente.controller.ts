@@ -59,13 +59,10 @@ export class ClienteController {
   }
 
   return this.clienteService.deleteCliente(idNum);
+  }
 }
 
-  
- 
 
-
-}
 
 
 
