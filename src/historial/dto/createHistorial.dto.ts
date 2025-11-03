@@ -18,12 +18,12 @@ export class CreateHistorialDto {
 
   @IsString({ message: 'La descripción es obligatoria y debe ser texto' })
   @IsNotEmpty({ message: 'La descripción es obligatoria' })
-  @Transform(({ value }) => value.trim())
+  @Transform(({ value }) => value.trim().toLowerCase())
   descripcion: string;
 
   @IsOptional()
   @IsString({ message: 'El tratamiento debe ser texto' })
-  @Transform(({ value }) => value.trim())
+  @Transform(({ value }) => value.trim().toLowerCase())
   tratamiento?: string;
 
   @IsOptional()
@@ -33,12 +33,12 @@ export class CreateHistorialDto {
 
   @IsOptional()
   @IsString({ message: 'El resultado debe ser texto' })
-  @Transform(({ value }) => value.trim())
+  @Transform(({ value }) => value.trim().toLowerCase())
   resultado?: string;
 
   @IsOptional()
   @IsString({ message: 'La observación debe ser texto' })
-  @Transform(({ value }) => value.trim())
+  @Transform(({ value }) => value.trim().toLowerCase())
   observacion?: string;
 }
 

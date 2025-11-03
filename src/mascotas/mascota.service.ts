@@ -30,22 +30,36 @@ getAllActivos() {
   const datos = dbService.leerDB();
 
   if (!Array.isArray(datos.mascotas) || datos.mascotas.length === 0) {
-    return [];
+    throw new NotFoundException('No hay mascotas registradas');
   }
 
-  return datos.mascotas.filter(mascota => mascota.estado === 'activo');
-}
+  const activas =  datos.mascotas.filter(mascota => mascota.estado === 'activo');
+
+    if (activas.lenght === 0){
+      throw new NotFoundException('No hay mascotas inactivas');
+    }
+
+    return activas;
+  }
+
 
 
 getAllInactivos() {
   const datos = dbService.leerDB();
 
-  if (!Array.isArray(datos.mascotas) || datos.mascotas.length === 0) {
-    return [];
+  if (!Array.isArray(datos.mascotas)) {
+    throw new NotFoundException('No hay mascotas registradas');
   }
 
-  return datos.mascotas.filter(mascota => mascota.estado === 'inactivo');
+  const inactivas = datos.mascotas.filter(mascota => mascota.estado === 'inactivo');
+
+  if (inactivas.length === 0) {
+    throw new NotFoundException('No hay mascotas inactivas');
+  }
+
+  return inactivas;
 }
+
 
 createMascota(mascotaNueva: CreateMascotaDto) {
     const datos = dbService.leerDB();
@@ -90,65 +104,63 @@ createMascota(mascotaNueva: CreateMascotaDto) {
 
 
   updateMascota(id: number, mascotaUpdate: UpdateMascotaDto) {
-  const datos = dbService.leerDB();
+    const datos = dbService.leerDB();
 
-  const mascota = datos.mascotas.find(mascota => mascota.id === id);
+    const mascota = datos.mascotas.find(mascota => mascota.id === id);
 
-  if (!mascota) {
-    throw new NotFoundException(`No existe una mascota con ID ${id}`);
-  }
+    if (!mascota) {
+      throw new NotFoundException(`No existe una mascota con ID ${id}`);
+    }
 
-  if (mascotaUpdate.nombre && mascotaUpdate.nombre !== mascota.nombre) {
-    mascota.nombre = mascotaUpdate.nombre;
-  }
+    if (mascotaUpdate.nombre && mascotaUpdate.nombre !== mascota.nombre) {
+     mascota.nombre = mascotaUpdate.nombre;
+    }
 
-  if (mascotaUpdate.especie && mascotaUpdate.especie !== mascota.especie) {
-    mascota.especie = mascotaUpdate.especie;
-  }
+    if (mascotaUpdate.especie && mascotaUpdate.especie !== mascota.especie) {
+      mascota.especie = mascotaUpdate.especie;
+    }
 
-  if (mascotaUpdate.raza && mascotaUpdate.raza !== mascota.raza) {
-    mascota.raza = mascotaUpdate.raza;
-  }
+    if (mascotaUpdate.raza && mascotaUpdate.raza !== mascota.raza) {
+      mascota.raza = mascotaUpdate.raza;
+    }
 
-  if (mascotaUpdate.edad && mascotaUpdate.edad !== mascota.edad) {
-    mascota.edad = mascotaUpdate.edad;
-  }
+    if (mascotaUpdate.edad && mascotaUpdate.edad !== mascota.edad) {
+     mascota.edad = mascotaUpdate.edad;
+    }
 
-  if (mascotaUpdate.sexo && mascotaUpdate.sexo !== mascota.sexo) {
-    mascota.sexo = mascotaUpdate.sexo;
-  }
+    if (mascotaUpdate.sexo && mascotaUpdate.sexo !== mascota.sexo) {
+      mascota.sexo = mascotaUpdate.sexo;
+    }
 
-  if (mascotaUpdate.clienteId && mascotaUpdate.clienteId !== mascota.clienteId) {
-    const clienteExiste = datos.clientes.find(cliente => cliente.id === mascotaUpdate.clienteId);
+    if (mascotaUpdate.clienteId && mascotaUpdate.clienteId !== mascota.clienteId) {
+      const clienteExiste = datos.clientes.find(cliente => cliente.id === mascotaUpdate.clienteId);
 
     if (!clienteExiste) {
       throw new NotFoundException(`No existe un cliente con ID ${mascotaUpdate.clienteId}`);
+      }
+      mascota.clienteId = mascotaUpdate.clienteId;
     }
-    mascota.clienteId = mascotaUpdate.clienteId;
-  }
 
-  if (mascotaUpdate.estado && mascotaUpdate.estado !== mascota.estado) {
-    mascota.estado = mascotaUpdate.estado;
-  }
+    if (mascotaUpdate.estado && mascotaUpdate.estado !== mascota.estado) {
+      mascota.estado = mascotaUpdate.estado;
+    }
 
-  dbService.guardarDB(datos);
-  return mascota;
-}
+    dbService.guardarDB(datos);
+    return mascota;
+  }
 
   deleteMascota(id: number) {
-  const datos = dbService.leerDB();
-  const index = datos.mascotas.findIndex(mascota => mascota.id === id);
+    const datos = dbService.leerDB();
+   const index = datos.mascotas.findIndex(mascota => mascota.id === id);
 
-  if (index === -1) {
-    throw new NotFoundException(`No existe una mascota con ID ${id}`);
+    if (index === -1) {
+     throw new NotFoundException(`No existe una mascota con ID ${id}`);
+    }
+    datos.mascotas.splice(index, 1);
+    dbService.guardarDB(datos);
+
+    return { mensaje: `Mascota con ID ${id} eliminada correctamente` };
   }
-
-  datos.mascotas.splice(index, 1);
-  dbService.guardarDB(datos);
-
-  return { mensaje: `Mascota con ID ${id} eliminada correctamente` };
-}
-
 }
 
 

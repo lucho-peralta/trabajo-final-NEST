@@ -37,14 +37,25 @@ export class TurnosService {
 
     const datos = dbService.leerDB();
 
-    return datos.turnos.filter((turno) => turno.estado === 'pendiente');
+    const pendientes = datos.turnos.filter((turno) => turno.estado === 'pendiente');
+
+    if (!pendientes){
+      throw new NotFoundException('No existen turnos pendientes');
+    }
+    return pendientes;
   }
 
   getRealizados() {
 
     const datos = dbService.leerDB();
 
-    return datos.turnos.filter( turno => turno.estado === 'realizado');
+    const realizados = datos.turnos.filter( turno => turno.estado === 'realizado');
+
+    if (!realizados){
+      throw new NotFoundException('No existen turnos ya realizados');
+    }
+
+    return realizados;
   }
 
   create(dto: CreateTurnoDto) {

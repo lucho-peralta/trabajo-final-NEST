@@ -24,7 +24,13 @@ export class ClienteService {
       throw new NotFoundException('No hay clientes registrados');
     }
 
-    return datos.clientes.filter(cliente => cliente.estado === 'activo');
+    const activos = datos.clientes.filter(cliente => cliente.estado === 'activo');
+
+    if (activos.lenght === 0){
+      throw new NotFoundException('No hay clientes activos')
+    }
+
+    return activos;
   }
 
   getAllInactivos() {
@@ -34,11 +40,18 @@ export class ClienteService {
       throw new NotFoundException('No hay clientes registrados');
     }
 
-    return datos.clientes.filter(cliente => cliente.estado === 'inactivo');
+    const inactivos = datos.clientes.filter(cliente => cliente.estado === 'inactivo');
+    if (inactivos.lenght === 0){
+      throw new NotFoundException('No hay clientes inactivos')
+    }
+
+    return inactivos;
+
   }
 
  getById(id: number) {
     const datos = dbService.leerDB();
+
     const clienteEncontrado = datos.clientes.find(cliente => cliente.id === id);
 
     if (!clienteEncontrado) {
@@ -57,6 +70,7 @@ export class ClienteService {
   }
 
   const existeCliente = datos.clientes.some(cliente => cliente.dni === clienteNuevo.dni);
+  
   if (existeCliente) {
     throw new BadRequestException(`Ya existe un cliente con el número de DNI ingresado: ${clienteNuevo.dni}`);
   }
